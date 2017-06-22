@@ -1,3 +1,7 @@
-Option +FollowSymLinks
-RewriteEngine on
-RewriteRule ^([a-zA-Z]*)/?([a-zA-Z0-9]*)?/?$ index.php?controller-$18action-$28id-$3 [NC, L]
+
+RewriteEngine On
+RewriteBase /path_to_phpMyAdmin
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([a-z_]+\.php)$ index.php?db=$1&table=$2&target=$3 [R]
+RewriteRule ^([a-zA-Z0-9_]+)/([a-z_]+\.php)$ index.php?db=$1&target=$2 [R]
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)$ index.php?db=$1&table=$2 [R]
+RewriteRule ^([a-zA-Z0-9_]+)$ index.php?db=$1 [R]
