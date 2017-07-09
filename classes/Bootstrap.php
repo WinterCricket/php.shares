@@ -17,6 +17,7 @@ class Bootstrap{
 			$this->action = $this->request['action'];
 		}
 	}
+	
 	public function createController(){
 		//check class
 		if(class_exists($this->controller)){
