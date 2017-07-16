@@ -12,7 +12,7 @@ require('controllers/shares.php');
 require('controllers/users.php');
 
 $bootstrap = new Bootstrap($_GET);
-$controller = new $bootstrap->createController();
+$controller =  $bootstrap->createController();
 if($controller){
 	$controller->executeAction();
 }
